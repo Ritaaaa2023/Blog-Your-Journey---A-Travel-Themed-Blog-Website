@@ -4,7 +4,7 @@
   import { UPLOAD_URL, ARTICLE_URL } from "$lib/js/api-urls.js";
   import { goto } from "$app/navigation";
   import { invalidate } from "$app/navigation";
-  import { PUBLIC_IMAGES_URL } from "$env/static/public";
+  import { PUBLIC_IMAGES_URL} from "$env/static/public";
   import dayjs from "dayjs";
 
   // creat article varibles
@@ -38,7 +38,7 @@
   $: allValid = title.length > 0 && abstract.length > 0 && category.length > 0;
 
   // Configuration  for the TinyMCE editor
-  const apiKey = "prqtukn9b1mgmxqt0wgg9wlpe2q9byfabl2ddw9z98ab6fcd";
+  const apiKey = import.meta.env.VITE_TINYMCE_API_KEY;
   const conf = {
     plugins: "lists image wordcount",
     file_picker_types: "file image media",
